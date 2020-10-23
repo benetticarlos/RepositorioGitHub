@@ -22,9 +22,17 @@ git braunch nombreDeRama
 //moverse entre ramas
 git checkout nombreDeRama
 
+//llevar los cambios de una rama a la master
+	//cambiarse a la rama amster
+	git checkout master
+	//combinar ramam con master
+	git merge nombreDeRamaACombinar
 
 //clonar repositorio
 git clone https://github.com/benetticarlos/RepositorioGitHub.git
 
 //subir una actualizacion al servidor
 git push origin master
+
+//traer cambios desde el repositorio a la carpeta local
+git pull origin master
