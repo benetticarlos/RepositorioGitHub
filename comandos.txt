@@ -1,0 +1,30 @@
+
+
+//iniciar 
+git init
+
+//conectar carpeta al servidor
+git config --global user.email "el correo"
+git config --global user.name "el usuario"
+
+//preparar los archivos para guardar
+git add .
+
+//guardar los cambios
+git commit -m "mensaje"
+
+//ver estado
+git status
+
+//crear ramas
+git braunch nombreDeRama
+
+//moverse entre ramas
+git checkout nombreDeRama
+
+
+//clonar repositorio
+git clone https://github.com/benetticarlos/RepositorioGitHub.git
+
+//subir una actualizacion al servidor
+git push origin master
