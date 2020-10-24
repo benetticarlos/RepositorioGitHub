@@ -21,3 +21,7 @@ guardarDatos(lista)
 function eliminarItem(item){
   localStorage.removeItem(item)
 }
+
+function eliminarTodo() {
+  localStorage.clear()
+}
