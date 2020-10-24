@@ -9,3 +9,8 @@ function guardarDatos(lista) {
 }
 
 guardarDatos(lista)
+
+
+function eliminarItem(item){
+  localStorage.removeItem(item)
+}
