@@ -22,6 +22,12 @@ git braunch nombreDeRama
 //moverse entre ramas
 git checkout nombreDeRama
 
+//eliminar una rama local
+git branch -d nombre_rama
+
+//forzar eliminacion de una rama local
+git branch -D nombre_rama
+
 //llevar los cambios de una rama a la master
 	//cambiarse a la rama amster
 	git checkout master
@@ -37,9 +43,22 @@ git push origin master
 //traer cambios desde el repositorio a la carpeta local
 git pull origin master
 
+<<<<<<< HEAD:comandos.txt
 //aregar repositorio a link
 git remote add origin ""LINK REPOSITORIO""
 
 
-//muestra los repositorios remotos que están configurados actualmente
+//muestra los repositorios remotos que estï¿½n configurados actualmente
 git remote -v
+=======
+
+//conectar con repositorio
+git remote add origin https://github.com/user/repo.git
+
+
+
+
+
+
+modificacion
+>>>>>>> 4b8b06f7d74db25346bd14aa4d137dc3db45b1e7:comandos git.txt
