@@ -22,6 +22,12 @@ git braunch nombreDeRama
 //moverse entre ramas
 git checkout nombreDeRama
 
+//eliminar una rama local
+git branch -d nombre_rama
+
+//forzar eliminacion de una rama local
+git branch -D nombre_rama
+
 //llevar los cambios de una rama a la master
 	//cambiarse a la rama amster
 	git checkout master
