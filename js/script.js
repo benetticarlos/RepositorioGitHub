@@ -4,9 +4,11 @@
 
 const lista = ["producto", "cantidad", "precio"]
 
-function guardarDatos(lista) {
+ function guardarDatos(lista) {
   localStorage.setItem("lista", JSON.stringify(lista));
 }
+guardarDatos(lista)
+
 
 function mostrarDatos(datosbuscar) {
   return JSON.parse(localStorage.getItem(datosbuscar))
@@ -15,7 +17,6 @@ function mostrarDatos(datosbuscar) {
 // console.log (abrir)
 
 
-guardarDatos(lista)
 
 
 function eliminarItem(item){
