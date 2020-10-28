@@ -29,8 +29,8 @@ function eliminarTodo() {
   localStorage.clear()
 }
 
-const producto = document.querySelector("#input-producto")
 
+const producto = document.querySelector('#input-producto')
 const cantidad = document.querySelector('#input-cantidad')
 
 const precio = document.querySelector("#input-precio");
@@ -71,6 +71,7 @@ boton.addEventListener("click", function () {
   const listaFinal = [contador,producto.value,cantidad.value,precio.value]
   // console.log(listaFinal)
   guardarDatos(contador, listaFinal)
+  tablaArmada(listaFinal)
   contador += 1;
   console.log(contador)
   limpiarCampos()
@@ -81,9 +82,16 @@ let botonBorrar = document.querySelector("#borrar-todo")
 
 botonBorrar.addEventListener("click", function () {
   eliminarTodo()
+  tbody.innerHTML=""
   contador = 1
 })
 // borrar individual
 
 // let formulario = document.querySelector("#formulario")
 
+// lista de segundo cuadro
+const tbody = document.querySelector("tbody")
+
+function tablaArmada(listaFinal) {
+   tbody.innerHTML+=`<tr><th scope="row"></th><td>${listaFinal[1]}</td><td>${listaFinal[2]}</td><td>${listaFinal[3]}</td></tr>`
+}
