@@ -42,10 +42,11 @@ let formulario = document.querySelector("#formulario-principal")
 formulario.addEventListener("submit", function(event){
   event.defaultPrevented()
 })
-function borrarComportamiento(e) {
-  let evento = window.event || e;
-  evento.preventDefault()
-}
+
+// function borrarComportamiento(e) {
+//   let evento = window.event || e;
+//   evento.preventDefault()
+// }
 
 // datos = {
 //   "miproducto": producto.value,
@@ -58,9 +59,9 @@ let contador = 1;
 const nombreDeLista = "lista"
 
 boton.addEventListener("click", function () {
-  borrarComportamiento()
+  // borrarComportamiento()
   const listaFinal = [producto.value,cantidad.value,precio.value]
-  console.log(listaFinal)
+  // console.log(listaFinal)
   guardarDatos(nombreDeLista+contador, listaFinal)
   contador += 1;
   console.log(contador)
