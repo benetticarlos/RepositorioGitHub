@@ -21,9 +21,7 @@ function mostrarDatos(datosbuscar) {
 
 
 
-function eliminarItem(item){
-  localStorage.removeItem(item)
-}
+
 
 function eliminarTodo() {
   localStorage.clear()
@@ -86,6 +84,17 @@ botonBorrar.addEventListener("click", function () {
   contador = 1
 })
 // borrar individual
+function eliminarItem(item){
+
+  localStorage.removeItem(item)
+  // tbody.removeChild("#1")
+  document.querySelector("#fila"+item).remove()
+}
+
+// const eliminarLinea = document.querySelector("#eliminarLinea")
+// eliminarLinea.addEventListener("click",function() {
+//   eliminarItem()
+// })
 
 // let formulario = document.querySelector("#formulario")
 
@@ -93,5 +102,5 @@ botonBorrar.addEventListener("click", function () {
 const tbody = document.querySelector("tbody")
 
 function tablaArmada(listaFinal) {
-   tbody.innerHTML+=`<tr><th scope="row"></th><td>${listaFinal[1]}</td><td>${listaFinal[2]}</td><td>${listaFinal[3]}</td></tr>`
+   tbody.innerHTML+=`<tr id="${"fila"+listaFinal[0]}"><th scope="row"></th><td>${listaFinal[1]}</td><td>${listaFinal[2]}</td><td>${listaFinal[3]}</td><td><button type="button" class="btn btn-danger" id="eliminarLinea" onClick="eliminarItem(${listaFinal[0]});">-</button></td></tr>`
 }
