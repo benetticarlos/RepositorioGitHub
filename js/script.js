@@ -43,10 +43,18 @@ formulario.addEventListener("submit", function(event){
   event.defaultPrevented()
 })
 
-// function borrarComportamiento(e) {
-//   let evento = window.event || e;
-//   evento.preventDefault()
-// }
+
+function limpiarCampos() {
+       producto.value=""
+       cantidad.value=""
+       precio.value=""
+}
+
+
+function borrarComportamiento(e) {
+  let evento = window.event || e;
+  evento.preventDefault()
+}
 
 // datos = {
 //   "miproducto": producto.value,
@@ -59,21 +67,23 @@ let contador = 1;
 const nombreDeLista = "lista"
 
 boton.addEventListener("click", function () {
-  // borrarComportamiento()
-  const listaFinal = [producto.value,cantidad.value,precio.value]
+  borrarComportamiento()
+  const listaFinal = [contador,producto.value,cantidad.value,precio.value]
   // console.log(listaFinal)
-  guardarDatos(nombreDeLista+contador, listaFinal)
+  guardarDatos(contador, listaFinal)
   contador += 1;
   console.log(contador)
+  limpiarCampos()
+  producto.focus()
 })
-
+// borrar todo
 let botonBorrar = document.querySelector("#borrar-todo")
 
 botonBorrar.addEventListener("click", function () {
   eliminarTodo()
   contador = 1
 })
-
-
+// borrar individual
 
 // let formulario = document.querySelector("#formulario")
+
