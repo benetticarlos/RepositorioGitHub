@@ -20,28 +20,31 @@ let tbody = document.querySelector("tbody")
 
 
 
+{
 
-//probando con objetos para funcionamiento
-const misListas = {
-  "ProductosO" : [
-    {
-      "lista1":[1,"Primer Producto","22","99"]
-    },
-    {
-      "lista2":[2,"segundo Producto","23","100"]
-    },
-    {
-      "lista3":[3,"tercer Producto","24","150"]
-    }
-  ]
+  //probando con objetos para funcionamiento
+  ///lista inicial
+  // const misListas = {
+  //   "ProductosO" : [
+  //     {
+  //       "lista1":[1,"Primer Producto","22","99"]
+  //     },
+  //     {
+  //       "lista2":[2,"segundo Producto","23","100"]
+  //     },
+  //     {
+  //       "lista3":[3,"tercer Producto","24","150"]
+  //     }
+  //   ]
+  // }
+  ////segunda prueba
+  // const misListas2 = [
+  //   {"lista1":[1,"Primer Producto","22","99"]},
+  //   {"lista2":[2,"segundo Producto","23","100"]},
+  //   {"lista3":[3,"tercer Producto","24","150"]}
+  // ]
+  // const nuevaLista = {"lista3":[3,"tercer Producto","24","150"]}
 }
-////segunda prueba
-const misListas2 = [
-  {"lista1":[1,"Primer Producto","22","99"]},
-  {"lista2":[2,"segundo Producto","23","100"]},
-  {"lista3":[3,"tercer Producto","24","150"]}
-]
-const nuevaLista = {"lista3":[3,"tercer Producto","24","150"]}
  
 ///implementando utilizacion de arreglos de arreglos
 ////tercera prueba
@@ -55,54 +58,65 @@ let misListas3 = [
 
 
 ///-------------------------------
-////verifica datos en localstore para traerlos siexisten
+////verifica datos en localstore para traerlos si existen
 function traerDatosExistentes() {
   if(mostrarDatos(datosPruductos1)){
    tablaArmada(mostrarDatos(datosPruductos1))
    misListas3 = mostrarDatos(datosPruductos1)
   } else {
-    tablaArmada(misListas3)
+    tablaArmada(misListas3) // si no existen relleno con datos precargados
   }
 }
 traerDatosExistentes()
 
 ////si existen datos ajustar el id = contador
-function ajustarId() {
+function ajustarId() { //solo optativo para incorporar un id
   if(mostrarDatos(datosPruductos1)){
     contador = mostrarDatos(datosPruductos1)[mostrarDatos(datosPruductos1).length - 1][0] + 1
    } 
 }
-ajustarId()
+ajustarId()//segun datos ya existentes ajusta id al inicio tomando en cuneta el ultimo que se uso
 
 
 
 /////////TRABAJO LOCALSTORE
+
+//guarda datos en localstore
  function guardarDatos(nombreDeLista, lista) {
   localStorage.setItem(nombreDeLista, JSON.stringify(lista));
 }
 
+//trae datos localstore
 function mostrarDatos(datosbuscar) {
   return JSON.parse(localStorage.getItem(datosbuscar))
 }
 
+//elimina un item de la lista
 function eliminarItem(indice){
 
-  misListas3.splice(indice-1,1)
+  misListas3.splice(indice-1,1)//elimina item del arreglo
   
   guardarDatos("datosPruductos", misListas3)
 
-  document.querySelector("#fila"+indice).remove()
+  eliminaFilaDeTabla(indice)
 
   tablaArmada(misListas3)
 }
 
+//elimina todo el localstore
 function eliminarTodo() {
   localStorage.clear()
+}
+
+//elimina una fila de la tabla html
+function eliminaFilaDeTabla(indice) {
+  document.querySelector("#fila"+indice).remove()
 }
 
 
 ///----------------------------------
 ////EVENTOS
+//elimina el comportamiento por efecto del formulario
 formulario.addEventListener("submit", function(event){
   event.defaultPrevented()
 })
@@ -110,15 +124,13 @@ formulario.addEventListener("submit", function(event){
 boton.addEventListener("click", function () {
   
   borrarComportamiento()
-  
 
+  //crear un arreglo apartir de los datos del formulario
   const listaFinal = [contador,producto.value,cantidad.value,precio.value]
-  
- 
-
+  //agrega el arreglo anterior a la lista
   misListas3.push(listaFinal)
   
-
+  //guarda la lista en el localstore
   guardarDatos("datosPruductos", misListas3)
 
   tablaArmada(misListas3)
@@ -143,12 +155,12 @@ function limpiarCampos() {
        cantidad.value=""
        precio.value=""
 }
-
+//borra comportamiento por defecto del formulario
 function borrarComportamiento(e) {
   let evento = window.event || e;
   evento.preventDefault()
 }
-
+//arma la tabla con los datos de la lista
 function tablaArmada(datosLocalStore) {
   let indiceFilas = 1
   tbody.innerHTML = ""
