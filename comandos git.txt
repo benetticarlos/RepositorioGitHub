@@ -57,6 +57,10 @@ git remote add origin https://github.com/user/repo.git
 
 
 
+//sincroniza ultima actualizacion del servidor
+git fetch origin
+
+
 
 
 
