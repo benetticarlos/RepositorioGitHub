@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- firebase -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <!-- <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" /> -->
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!-- local css -->
@@ -12,6 +15,44 @@
 </head>
 
 <body>
+  <!-- <div id="registro" class="container">
+    <h4>registros de usuarios</h4>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1" >Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" >Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      
+      <button type="submit" class="btn btn-primary" onclick="registrar()">Submit</button>
+    </form>
+    <h3>Ya Tienes una cuenta?</h3>
+  </div>
+
+  <div id="login" class="container">
+    <h4>Ingresos de usuarios</h4>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1" >Email address</label>
+        <input type="email" class="form-control controlUsuariosEmail" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" >Password</label>
+        <input type="password" class="form-control controlUsuariosContrasena" id="exampleInputPassword1">
+      </div>
+      
+      <button type="submit" class="btn btn-primary" onclick="ingresoUsuarios()">Submit</button>
+    </form>
+    <h3>Registrate</h3>
+  </div> -->
+
+  <div id="cargaDatos">
+
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">STOCKEATE</a>
         <a class="navbar-brand" href="#">Agregar +</a>
@@ -22,9 +63,9 @@
         <h2>Agregar Producto</h2>
         
         <form id="formulario-principal" action="" method="post" id="formulario">
-            <!--Nombre del producto--> <input class="form-control form-control-lg" id="input-producto" type="text" placeholder="Producto">
-            <!--Cantidad--><input class="form-control" id="input-cantidad" type="text" placeholder="Cantidad">
-            <!--Precio--><input class="form-control form-control-sm" id="input-precio" type="text" placeholder="Precio Unitario">
+             <input class="form-control form-control-lg" id="input-producto" type="text" placeholder="Producto">
+            <input class="form-control" id="input-cantidad" type="text" placeholder="Cantidad">
+            <input class="form-control form-control-sm" id="input-precio" type="text" placeholder="Precio Unitario">
         <button type="submit" class="btn btn-primary" id="guardarboton" onclick=`${borrarComportamiento()}`>Guardar</button>
         </form>
     
@@ -40,26 +81,11 @@
               </tr>
             </thead>
             <tbody>
-              <!-- <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr> -->
-              <!-- <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr> -->
+              
             </tbody>
           </table>
     </div>
+  </div>
 
 
 
@@ -69,6 +95,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <!-- js local -->
     <script src="js/script.js"></script>
+
+
+    <!-- ///firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAcswV_pQ90lVy6XnXsN4nKqtuK6hT-xxE",
+        authDomain: "productos-localstore.firebaseapp.com",
+        databaseURL: "https://productos-localstore.firebaseio.com",
+        projectId: "productos-localstore",
+        storageBucket: "productos-localstore.appspot.com",
+        messagingSenderId: "583805573567",
+        appId: "1:583805573567:web:94e0cc435bb6dfbeb7a90a"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
 </body>
 
 </html>

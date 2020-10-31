@@ -24,3 +24,17 @@ input {
     height: 100%;
     font-size: .875rem;
 }
+/* #cargaDatos {
+    display: none;
+} */
+
+#login, #registro {
+    height: 10rem;
+    margin: 2rem auto;
+}
+#login form, #registro form {
+    height: 28%;
+}
+h3 {
+    margin-top: 10%;
+}

@@ -193,6 +193,63 @@ function tablaArmada(datosLocalStore) {
 
 
 
+////FIREBASE
 
 
 
+// function registrar() {
+//   let email = document.querySelector("#exampleInputEmail1").value
+//   let contrasena = document.querySelector("#exampleInputPassword1").value
+//   firebase.auth().createUserWithEmailAndPassword(email, contrasena)
+//   .catch(function(error) {
+//     // Handle Errors here.
+//     var errorCode = error.code;
+//     var errorMessage = error.message;
+//     console.log(errorCode)
+//     console.log(errorMessage)
+//     // ...
+//   });
+  
+// }
+// function ingresoUsuarios() {
+//   let email = document.querySelector(".controlUsuariosEmail").value
+//   let contrasena = document.querySelector(".controlUsuariosContrasena").value
+
+//   firebase.auth().signInWithEmailAndPassword(email, contrasena).catch(function(error) {
+//     // Handle Errors here.
+//     var errorCode = error.code;
+//     var errorMessage = error.message;
+//     console.log(errorCode)
+//     console.log(errorMessage)
+//     // ...
+//   });
+  
+// }
+// function observador(){
+//   firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//       console.log('existe usuario activo')
+
+//       // User is signed in.
+//       // var user = firebase.auth().currentUser;
+//       var name, email, photoUrl, uid, emailVerified, providerData;
+
+     
+//         name = user.displayName;
+//         email = user.email;
+//         photoUrl = user.photoURL;
+//         emailVerified = user.emailVerified;
+//         providerData = user.providerData;
+//         uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+//                         // this value to authenticate with your backend server, if
+//                         // you have one. Use User.getToken() instead.
+//         let datos = [name,email,photoUrl,emailVerified,providerData,uid]
+//         console.log(datos)
+//     } else {
+//       // No user is signed in.
+//       console.log('no existe usuario activo')
+//     }
+//   });
+// }
+
+// observador()
