@@ -317,8 +317,8 @@ function registrar() {
     registro.style.display = "block"
   })
   loguinUsuarios.addEventListener("click", function(){
-    login.style.display = "block"
     registro.style.display = "none"
+    login.style.display = "block"
   })
 
 
