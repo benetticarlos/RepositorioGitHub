@@ -3,6 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    height: 100vh;
+    /* position: relative; */
+}
 .navbar {
     justify-content: left;
 }
@@ -28,13 +32,323 @@ input {
     display: none;
 } */
 
-#login, #registro {
-    height: 10rem;
-    margin: 2rem auto;
+#login, #registro,#datosDeInicio {
+    border-radius: 3px;
+    margin-top: 2em;
+    height: 30%;
+    width: 40%;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    padding: 2em auto;
+    padding-top: 0.1em;
+    /* height: 30%; */
+    box-shadow: 0 5px 7px rgba(0,0,0,0.3), 0 -5px 7px rgba(0,0,0,0.3);
 }
-#login form, #registro form {
-    height: 28%;
+input {
+    /* margin: 0 auto; */
+    width:80%;
+    height: auto;
 }
+#registrar{
+    width: 80%;
+    background-color: transparent;
+    border-radius: 20px;
+    outline: none;
+
+}
+#registrar:hover {
+    background-color: rgba(32, 28, 247, 0.3);
+}
+
 h3 {
     margin-top: 10%;
+}
+h4 {
+    margin-top: 1em;
+}
+#datosDeInicio, #registro, #cargaDatos {
+    display: none;
+}
+#datosDeInicio {
+    position: absolute;
+    top: -27px;
+    right: 15px;
+    z-index: 5;
+    /* display: flex; */
+    color: white;
+    height: 3em;
+}
+#datosDeInicio button {
+    height: 2em;
+    margin: auto 4px;
+}
+h5{
+    font-size: 0.8em;
+    margin-top: 1em;
+    cursor: pointer;
+}
+h5:hover {
+    text-shadow: 0 3px 4px black;
+}
+
+
+
+/* /////MEDIAS */
+@media screen and (max-width: 846px){
+    body {
+        /* background-color: brown; */
+    }
+
+    #login, #registro {
+        width: 50%;
+    }
+    #datosDeInicio {
+        
+        right: 25px;
+        
+    }
+}
+@media screen and (max-width: 714px){
+    body {
+        /* background-color: blue; */
+    }
+
+    #login, #registro {
+        width: 80%;
+    }
+    #emailId, 
+    #contrasenaId,
+    #emailIdIngreso, 
+    #contrasenaIdIngreso,
+    #registrar {
+        width: 90%;
+    }
+    #datosDeInicio {
+        width: 50%;
+        display: block;
+        top: 26px;
+        right: 2px;
+        color: black;
+    }
+    #emailUsuario {
+        margin: auto;
+    }
+    #registrar {
+        width: auto;
+        margin: 0 3px;
+    }
+    #emailUsuario {
+        margin: auto;
+    }
+    #productos {
+        max-width: 100%;
+        width: 90%;
+        
+    }
+    h2 {
+        margin-top: .7em;
+    }
+}
+
+ @media screen and (max-width: 611px){
+   
+    #login, #registro {
+        width: 80%;
+    }
+    #emailId, 
+    #contrasenaId,
+    #emailIdIngreso, 
+    #contrasenaIdIngreso,
+    #registrar {
+        width: 90%;
+    }
+    #datosDeInicio {
+        display: block;
+        top: 26px;
+        right: 2px;
+        color: black;
+        width: 71%;
+        /* box-shadow: initial; */
+    }
+    .navbar{
+        justify-content: center;
+    }
+    #emailUsuario {
+        margin: auto;
+    }
+    #formulario-principal {
+        display: block;
+        height: auto;
+    }
+    #productos {
+        max-width: 100%;
+        width: 100%;
+        
+    }
+    h2 {
+        margin-top: 1.5em;
+    }
+}
+ 
+@media screen and (max-width: 470px){
+   
+    #login, #registro {
+        width: 80%;
+    }
+    #emailId, 
+    #contrasenaId,
+    #emailIdIngreso, 
+    #contrasenaIdIngreso,
+    #registrar {
+        width: 90%;
+    }
+    #datosDeInicio {
+        display: flex;
+        top: 26px;
+        right: auto;
+        color: black;
+        width: 100%;
+    }
+    #emailUsuario {
+        margin: auto;
+    }
+    #formulario-principal {
+        display: block;
+        height: auto;
+    }
+    #productos {
+        max-width: 100%;
+        width: 100%;
+        
+    }
+    h2 {
+        margin-top: 1.5em;
+    }
+}
+@media screen and (max-width: 417px){
+    body {
+        /* background-color: green; */
+    }
+
+    #login, #registro {
+        width: 95%;
+    }
+    #emailId, 
+    #contrasenaId,
+    #emailIdIngreso, 
+    #contrasenaIdIngreso,
+    #registrar {
+        width: 100%;
+    }
+    #datosDeInicio {
+        display: flex;
+        top: 26px;
+        right: auto;
+        color: black;
+        width: 100%;
+    }
+    #emailUsuario {
+        margin: auto;
+    }
+    #formulario-principal {
+        display: block;
+        height: auto;
+    }
+    #productos {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+    h2 {
+        margin-top: 1.5em;
+    }
+}
+@media screen and (max-width: 370px){
+    body {
+        /* background-color: green; */
+    }
+
+    #login, #registro {
+        width: 95%;
+    }
+    #emailId, 
+    #contrasenaId,
+    #emailIdIngreso, 
+    #contrasenaIdIngreso,
+    #registrar {
+        width: 100%;
+    }
+    #datosDeInicio {
+        display: flex;
+        top: 26px;
+        right: auto;
+        color: black;
+        width: 100%;
+    }
+    #emailUsuario {
+        margin: auto;
+    }
+    #formulario-principal {
+        display: block;
+        height: auto;
+    }
+    #productos {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+    h2 {
+        margin-top: 1.5em;
+    }
+    #cardaDatos {
+        width: min-content;
+    }
+    table{
+        display: grid;
+    }
+}
+@media screen and (max-width: 361px){
+    body {
+        /* background-color: green; */
+    }
+
+    #login, #registro {
+        width: 95%;
+    }
+    #emailId, 
+    #contrasenaId,
+    #emailIdIngreso, 
+    #contrasenaIdIngreso,
+    #registrar {
+        width: 100%;
+    }
+    #datosDeInicio {
+        display: flex;
+        top: 60px;
+        right: au;
+        color: black;
+        width: 100%;
+    }
+    #emailUsuario {
+        margin: auto;
+    }
+    #formulario-principal {
+        display: block;
+        height: auto;
+    }
+    #productos {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+    h2 {
+        margin-top: 1.5em;
+    }
+    #cardaDatos {
+        width: min-content;
+    }
+    table{
+        display: grid;
+    }
 }
