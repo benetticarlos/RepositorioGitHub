@@ -1,7 +1,5 @@
 # martineg100@gmail.com
 
-Proyecto mientras curso FullStack </rb>
+Proyecto mientras curso FullStack 
 
-login con firebase</rb>
-abm de datos con localstore</rb>
-css con bootstrap y muchas cosas a mano  =)</rb>
+login con firebase, abm de datos con localstore,css con bootstrap y muchas cosas a mano  =)
