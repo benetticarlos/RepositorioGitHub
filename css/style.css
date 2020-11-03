@@ -55,7 +55,7 @@ input {
     background-color: transparent;
     border-radius: 20px;
     outline: none;
-
+    max-width: 128px;
 }
 #registrar:hover {
     background-color: rgba(32, 28, 247, 0.3);
