@@ -91,3 +91,13 @@ function actualizarOrden(){
     miTabla.rows[i].cells[0].textContent = i
   }
 } 
+
+function traerLocalStore(){
+  let cantidaditem = 50
+  for (let i = 0 ; i <= cantidaditem; i++){
+    if(mostrarDatos(i)){
+      tablaArmada(mostrarDatos(i))
+    }
+  }
+}
+window.onload = traerLocalStore;
