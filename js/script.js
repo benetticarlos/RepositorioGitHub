@@ -64,6 +64,7 @@ function eliminarItem(item) {
   localStorage.removeItem(item);
 
   document.querySelector("#fila" + item).remove();
+  actualizarOrden();
 }
 
 
@@ -79,4 +80,14 @@ function tablaArmada(listaFinal) {
   }</td><td><button type="button" class="btn btn-danger" id="eliminarLinea" onClick="eliminarItem(${
     listaFinal[0]
   });">-</button></td></tr>`;
+  
+  actualizarOrden()
 }
+
+function actualizarOrden(){
+  let miTabla = document.querySelector("table")
+  let iteracion = miTabla.rows.length
+  for (let i = 1; i < iteracion; i++){
+    miTabla.rows[i].cells[0].textContent = i
+  }
+} 
