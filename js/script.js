@@ -225,6 +225,7 @@ function registrar() {
     firebase.auth().createUserWithEmailAndPassword(email, contrasena)
     .then(function(){
       console.log("dentro del then registro ", email, contrasena)
+      alert(`usuario ${email} Registrado Correctamente`)
 
     })
     .catch(function(error) {
@@ -278,6 +279,7 @@ function registrar() {
       // ...
       console.log("usuario logueado : ",email)
       login.style.display = "none"
+      registro.style.display = "none"
       datosDeUsuario.style.display = "flex"
       cargaDatos.style.display = "block"
       document.querySelector("#emailUsuario").innerHTML = email
