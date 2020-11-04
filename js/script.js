@@ -2,7 +2,7 @@
 // ////VARIABLES GLOBALES
 let contador = 4; //contador para crear los id de los productos
 const nombreDeLista = "lista"
-let datosPruductos1 = "datosPruductos" //nombre de arreglo en localstore
+let datosProductos1 = "datosProductos" //nombre de arreglo en localstore
 
 
 
@@ -60,9 +60,9 @@ let misListas3 = [
 ///-------------------------------
 ////verifica datos en localstore para traerlos si existen
 function traerDatosExistentes() {
-  if(mostrarDatos(datosPruductos1)){
-   tablaArmada(mostrarDatos(datosPruductos1))
-   misListas3 = mostrarDatos(datosPruductos1)
+  if(mostrarDatos(datosProductos1)){
+   tablaArmada(mostrarDatos(datosProductos1))
+   misListas3 = mostrarDatos(datosProductos1)
   } else {
     tablaArmada(misListas3) // si no existen relleno con datos precargados
   }
@@ -71,11 +71,11 @@ function traerDatosExistentes() {
 
 ////si existen datos ajustar el id = contador
 function ajustarId() { //solo optativo para incorporar un id
-  if(mostrarDatos(datosPruductos1)){
-    if(mostrarDatos(datosPruductos1).length == 0){
+  if(mostrarDatos(datosProductos1)){
+    if(mostrarDatos(datosProductos1).length == 0){
       contador = 1
     } else {
-      contador = mostrarDatos(datosPruductos1)[mostrarDatos(datosPruductos1).length - 1][0] + 1
+      contador = mostrarDatos(datosProductos1)[mostrarDatos(datosProductos1).length - 1][0] + 1
     }  
    } 
 }
@@ -99,7 +99,7 @@ function eliminarItem(indice){
 
   misListas3.splice(indice-1,1)//elimina item del arreglo
   
-  guardarDatos("datosPruductos", misListas3)
+  guardarDatos("datosProductos", misListas3)
 
   eliminaFilaDeTabla(indice)
 
@@ -134,7 +134,7 @@ boton.addEventListener("click", function () {
   misListas3.push(listaFinal)
   
   //guarda la lista en el localstore
-  guardarDatos("datosPruductos", misListas3)
+  guardarDatos("datosProductos", misListas3)
 
   tablaArmada(misListas3)
 
